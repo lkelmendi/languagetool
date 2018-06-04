@@ -102,7 +102,12 @@
             <artifactId>language-pt</artifactId>
             <version>${languagetool.version}</version>
         </dependency>
-        <dependency>
+         <dependency>
+            <groupId>org.languagetool</groupId>
+            <artifactId>language-sq</artifactId>
+            <version>${languagetool.version}</version>
+        </dependency>
+		<dependency>
             <groupId>org.languagetool</groupId>
             <artifactId>language-ru</artifactId>
             <version>${languagetool.version}</version>

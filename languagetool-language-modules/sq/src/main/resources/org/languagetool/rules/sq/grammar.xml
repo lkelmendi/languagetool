@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/print.xsl" ?>
+<?xml-stylesheet type="text/css" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.css" title="Easy editing stylesheet" ?>
+<!--
+Albanian grammar and typo rules for LanguageTool
+See resource/de/tagset.txt for the meaning of the POS tags
+Copyright (C) 2001-2010 Daniel Naber (http://www.danielnaber.de)
+$Id: grammar.xml,v 1.45 2010/12/26 22:56:14 dnaber Exp $
+-->
+<rules lang="sq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.xsd">
+	<category id="GGRAM" name="Gabim gramatikor">
+    <rule id="DO_TE" name="Do te(do të)">
+      <pattern mark_from="1">
+          <token>do</token>
+          <token>te</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>të</suggestion>" ?</message>
+      <example type="incorrect">Do <marker>te</marker> punoj.</example>
+      <example type="correct">Do <marker>të</marker> punoj.</example>
+    </rule>
+    <rule id="PER_TE" name="Për te(për të)">
+      <pattern mark_from="1">
+          <token>për</token>
+          <token>te</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>të</suggestion>" ?</message>
+      <example type="incorrect">Për <marker>te</marker> filluar një punë.</example>
+      <example type="correct">Për <marker>të</marker> filluar një punë.</example>
+    </rule>
+    <rule id="DERI_NE" name="Deri ne(deri në)">
+      <pattern mark_from="1">
+          <token regexp="yes">deri|gjer</token>
+          <token>ne</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>në</suggestion>" ?</message>
+      <example type="incorrect">Do të ecim deri<marker>ne</marker> fshat.</example>
+      <example type="correct">Do të ecim deri<marker>në</marker> fshat.</example>
+    </rule>
+    <rule id="ME_ANE" name="Me anë(anën)">
+	<pattern mark_to="-1">
+          <token>më</token>
+          <token regexp="yes">anë|anën</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>me</suggestion>" ?</message>
+      <example type="incorrect"><marker>Më</marker> anë të urdhrave.</example>
+      <example type="correct"><marker>Me</marker> anë të urdhrave.</example>
+    </rule>
+    <rule id="ME_SE" name="Me anë(anën)">
+	<pattern mark_to="-1">
+          <token>me</token>
+          <token>se</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>më</suggestion>" ?</message>
+      <example type="incorrect">Që nga dita e parë e njohjes kanë kaluar <marker>me</marker> se tre vjet.</example>
+      <example type="correct">Që nga dita e parë e njohjes kanë kaluar <marker>më</marker> se tre vjet.</example>
+    </rule>
+    <rule id="TE_HENEN" name="Të hënnën(martën)">
+	<pattern mark_to="-1">
+          <token>te</token>
+          <token regexp="yes">hënën|martën|mërkurën|enjtën|premten|shtunën|diellën</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>të</suggestion>" ?</message>
+      <example type="incorrect"><marker>Te</marker> henën është dite feste.</example>
+      <example type="correct"><marker>Të</marker> henën është dite feste.</example>
+    </rule>
+    <rule id="SE_HENES" name="Së hënnës ...">
+	<pattern mark_to="-1">
+          <token>se</token>
+          <token regexp="yes">hënës|martës|mërkurës|enjtës|premtes|shtunës|diellës</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>së</suggestion>" ?</message>
+      <example type="incorrect">Dita e dytë e javës, që vjen pas <marker>se</marker> henës.</example>
+      <example type="correct">Dita e dytë e javës, që vjen pas <marker>së</marker> henës.</example>
+    </rule>
+    <rule id="X_VJECAR" name="Së hënnës ...">
+        <pattern mark_from="0">
+          <token regexp="yes">\d+</token>
+          <token regexp="yes">vjeçar|vjçari|vjçarin|vjçarët|vjçare|vjçaren|vjçaret</token>
+        </pattern>
+      <message>Mos po mendoni "<suggestion>\1-\2</suggestion>" ?</message>
+      <example type="incorrect">Dita e dytë e javës, që vjen pas <marker>se</marker> henës.</example>
+      <example type="correct">Dita e dytë e javës, që vjen pas <marker>së</marker> henës.</example>
+    </rule>
+    <rule id="X_VJETORI" name="Së hënnës ...">
+        <pattern mark_from="0">
+          <token regexp="yes">\d+</token>
+          <token regexp="yes">vjetori|vjetorin|ditëshi|ditëshin|vjetëshi|vjetëshin</token>
+        </pattern>
+      <message>Mos po mendoni "<suggestion>\1-\2</suggestion>" ?</message>
+      <example type="incorrect"><marker>30 vjetëshi</marker> i parë i shekullit XX.</example>
+      <example type="correct"><marker>30-vjetëshi</marker> i parë i shekullit XX.</example>
+    </rule>	
+    <rule id="ISH_DREJTOR" name="Së hënnës ...">
+        <pattern mark_from="0">
+          <token regexp="yes">ish</token>
+          <token regexp="yes">drejtor|drejtori|komandant|komandanti|komisar|komisari|minister|ministri|kryeminister|kryeministri</token>
+        </pattern>
+      <message>Mos po mendoni "<suggestion>\1-\2</suggestion>" ?</message>
+      <example type="incorrect"><marker>Ish kryeministri</marker> i parë i Shqipërisë.</example>
+      <example type="correct"><marker>Ish-kryeministri</marker> i parë i Shqipërisë.</example>
+    </rule>	
+    <rule id="QE_X_VITE" name="Së hënnës ...">
+	<pattern mark_to="-2">
+		  <token>qe</token>
+          <token regexp="yes">\d+</token>
+          <token regexp="yes">vite|muaj|javë|ditë</token>
+        </pattern>
+      <message>Mos po mendoni "<suggestion>që</suggestion>" ?</message>
+      <example type="incorrect">Dita e dytë e javës, që vjen pas <marker>se</marker> henës.</example>
+      <example type="correct">Dita e dytë e javës, që vjen pas <marker>së</marker> henës.</example>
+    </rule>
+    <rule id="TE_UNE_TI" name="Me anë(anën)">
+	<pattern mark_to="-1">
+          <token>të</token>
+          <token regexp="yes">unë|ti|ai|ajo|ne|ju|ata|ato</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>te</suggestion>" ?</message>
+      <example type="incorrect">Ai shkoj <marker>të</marker> ato.</example>
+      <example type="correct">Ai shkoj <marker>te</marker> ato.</example>
+    </rule>
+    <rule id="TE_MIJAT_TIJAT" name="Me anë(anën)">
+	<pattern mark_to="-1">
+          <token>te</token>
+          <token regexp="yes">mijat|tijat|atij|asaj|ne|ju|ata|ato</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>të</suggestion>" ?</message>
+      <example type="incorrect">Fleroret janë <marker>te</marker> mijat.</example>
+      <example type="correct">Fletoret janë <marker>të</marker> mijat.</example>
+    </rule>
+    <rule id="I_IM_I_YT" name="Me anë(anën)">
+	<pattern mark_form="0">
+          <token>i</token>
+          <token regexp="yes">im|yt|ynë|juaj</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>\2</suggestion>" ?</message>
+      <example type="incorrect">Vëllau<marker>i im</marker> është i vogël.</example>
+      <example type="correct">Vëllau <marker>im</marker> është i vogël.</example>
+    </rule>
+    <rule id="E_IME_E_JOTE" name="Me anë(anën)">
+	<pattern mark_form="0">
+          <token>e</token>
+          <token regexp="yes">ime|jote|jonë|juaj</token>
+      </pattern>
+      <message>Mos po mendoni "<suggestion>\2</suggestion>" ?</message>
+      <example type="incorrect">Motra <marker>e ime</marker> është e bukur.</example>
+      <example type="correct">Motra <marker>ime</marker> është e bukur.</example>
+    </rule>
+  </category>  
+</rules>

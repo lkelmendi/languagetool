@@ -333,6 +333,12 @@
 									<file>../${parent.project.name}-language-modules/sl/target/${language.name}-sl-${project.version}.jar</file>
 									<ruleset>default-ruleset</ruleset>
 								</entry>
+								<!-- Albanian (sq) -->
+								<entry>
+									<name>/usr/share/java/${parent.project.name}-${project.version}/${language.name}-sq.jar</name>
+									<file>../${parent.project.name}-language-modules/sq/target/${language.name}-sq-${project.version}.jar</file>
+									<ruleset>default-ruleset</ruleset>
+								</entry>
 								<!-- Serbian (sr) -->
 								<entry>
 									<name>/usr/share/java/${parent.project.name}-${project.version}/${language.name}-sr.jar</name>
